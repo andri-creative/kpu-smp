@@ -10,15 +10,15 @@
  * 
  * @param {number} count - Jumlah warna yang dibutuhkan
  * @param {object} options - Optional configuration
- * @param {number} options.saturation - Saturation value (0-100), default 70
- * @param {number} options.lightness - Lightness value (0-100), default 60
- * @param {number} options.opacity - Opacity untuk background (0-1), default 0.2
+ * @param {number} options.saturation - Saturation value (0-100), default 85
+ * @param {number} options.lightness - Lightness value (0-100), default 55
+ * @param {number} options.opacity - Opacity untuk background (0-1), default 0.7
  * @returns {object} Object dengan backgroundColor dan borderColor arrays
  * 
  * @example
  * // Generate 5 warna dengan setting default
  * const colors = generateDistinctColors(5);
- * console.log(colors.backgroundColor); // Array 5 warna HSLA dengan opacity 0.2
+ * console.log(colors.backgroundColor); // Array 5 warna HSLA dengan opacity 0.7
  * console.log(colors.borderColor);    // Array 5 warna HSL dengan opacity 1.0
  * 
  * @example

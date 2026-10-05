@@ -62,8 +62,7 @@
                     formatter: function(value, context) {
                         const total = context.chart.data.datasets[0].data.reduce((a, b) => a + b, 0);
                         const percentage = ((value / total) * 100).toFixed(1);
-                        const label = context.chart.data.labels[context.dataIndex];
-                        return label + '\n' + percentage + '%';
+                        return percentage + '%';
                     }
                 }
             }
@@ -71,7 +70,9 @@
     };
 
         // Register plugin datalabels agar label % tampil di dalam pie slice
-        Chart.register(ChartDataLabels);
+        if (typeof ChartDataLabels !== 'undefined') {
+            Chart.register(ChartDataLabels);
+        }
 
         // Render pie chart ke canvas
         var pieChart = new Chart(
