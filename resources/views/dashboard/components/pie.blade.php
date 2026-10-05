@@ -70,6 +70,9 @@
         },
     };
 
+        // Register plugin datalabels agar label % tampil di dalam pie slice
+        Chart.register(ChartDataLabels);
+
         // Render pie chart ke canvas
         var pieChart = new Chart(
             document.getElementById('pieChart'),
