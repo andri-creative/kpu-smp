@@ -24,27 +24,51 @@
             data: dataVotes,
             backgroundColor: colors.backgroundColor,
             borderColor: colors.borderColor,
-            borderWidth: 1
+            borderWidth: 0
         }]
     };
 
-        // Konfigurasi Chart.js
-        const config = {
-            type: 'pie',
-            data: data,
-            options: {
-                responsive: true,
-                plugins: {
-                    legend: {
-                        position: 'top',
+    // Konfigurasi Chart.js
+    const config = {
+        type: 'pie',
+        data: data,
+        options: {
+            responsive: true,
+            plugins: {
+                legend: {
+                    position: 'top',
+                },
+                title: {
+                    display: true,
+                    text: 'Distribusi Suara per Kandidat'
+                },
+                tooltip: {
+                    callbacks: {
+                        label: function(context) {
+                            const label = context.label || '';
+                            const value = context.parsed;
+                            const total = context.dataset.data.reduce((a, b) => a + b, 0);
+                            const percentage = ((value / total) * 100).toFixed(1);
+                            return label + ': ' + value + ' (' + percentage + '%)';
+                        }
+                    }
+                },
+                datalabels: {
+                    color: '#fff',
+                    font: {
+                        weight: 'bold',
+                        size: 14
                     },
-                    title: {
-                        display: true,
-                        text: 'Distribusi Suara per Kandidat'
+                    formatter: function(value, context) {
+                        const total = context.chart.data.datasets[0].data.reduce((a, b) => a + b, 0);
+                        const percentage = ((value / total) * 100).toFixed(1);
+                        const label = context.chart.data.labels[context.dataIndex];
+                        return label + '\n' + percentage + '%';
                     }
                 }
-            },
-        };
+            }
+        },
+    };
 
         // Render pie chart ke canvas
         var pieChart = new Chart(

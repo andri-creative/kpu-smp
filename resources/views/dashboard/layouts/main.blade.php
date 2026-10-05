@@ -101,6 +101,9 @@
     {{-- Cards --}}
     <script src="{{ asset('assets/vendor/js/chart.umd.min.js') }}"></script>
 
+    {{-- Chart.js Datalabels Plugin untuk tampilkan % di pie slice --}}
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.2.0/dist/chartjs-plugin-datalabels.min.js"></script>
+
     <script src="{{ asset('assets/vendor/js/chart.js') }}"></script>
 
     <!-- AlpineJS -->

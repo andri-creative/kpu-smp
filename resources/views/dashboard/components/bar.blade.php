@@ -25,7 +25,7 @@
             data: dataVotesKandidat,
             backgroundColor: colorsKandidat.backgroundColor,
             borderColor: colorsKandidat.borderColor,
-            borderWidth: 1
+            borderWidth: 0
         }]
     };
 

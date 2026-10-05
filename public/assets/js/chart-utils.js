@@ -26,9 +26,9 @@
  * const colors = generateDistinctColors(3, { saturation: 80, opacity: 0.5 });
  */
 function generateDistinctColors(count, options = {}) {
-    const saturation = options.saturation || 70;
-    const lightness = options.lightness || 60;
-    const opacity = options.opacity !== undefined ? options.opacity : 0.2;
+    const saturation = options.saturation || 85;
+    const lightness = options.lightness || 55;
+    const opacity = options.opacity !== undefined ? options.opacity : 0.7;
     
     const backgroundColors = [];
     const borderColors = [];
