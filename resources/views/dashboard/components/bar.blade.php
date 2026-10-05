@@ -12,33 +12,22 @@
         });
 
         var dataVotesKandidat = kandidatData.map(function(kandidat) {
-            return kandidat.votes;
-        });
+        return kandidat.votes;
+    });
 
-        const dataKandidat = {
-            labels: labelsKandidat,
-            datasets: [{
-                label: 'Jumlah Suara',
-                data: dataVotesKandidat,
-                backgroundColor: [
-                    'rgba(54, 162, 235, 0.2)',
-                    'rgba(255, 99, 132, 0.2)',
-                    'rgba(75, 192, 192, 0.2)',
-                    'rgba(153, 102, 255, 0.2)',
-                    'rgba(255, 159, 64, 0.2)',
-                    // Tambahkan lebih banyak warna jika diperlukan
-                ],
-                borderColor: [
-                    'rgba(54, 162, 235, 1)',
-                    'rgba(255, 99, 132, 1)',
-                    'rgba(75, 192, 192, 1)',
-                    'rgba(153, 102, 255, 1)',
-                    'rgba(255, 159, 64, 1)',
-                    // Tambahkan lebih banyak warna jika diperlukan
-                ],
-                borderWidth: 1
-            }]
-        };
+    // Generate warna otomatis untuk kandidat
+    const colorsKandidat = generateDistinctColors(kandidatData.length);
+
+    const dataKandidat = {
+        labels: labelsKandidat,
+        datasets: [{
+            label: 'Jumlah Suara',
+            data: dataVotesKandidat,
+            backgroundColor: colorsKandidat.backgroundColor,
+            borderColor: colorsKandidat.borderColor,
+            borderWidth: 1
+        }]
+    };
 
         const configKandidat = {
             type: 'bar',

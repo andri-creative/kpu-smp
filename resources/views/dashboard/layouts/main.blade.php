@@ -95,6 +95,9 @@
 
     </div>
 
+    {{-- Chart utilities (HARUS sebelum component scripts) --}}
+    <script src="{{ asset('assets/js/chart-utils.js') }}"></script>
+
     {{-- Cards --}}
     <script src="{{ asset('assets/vendor/js/chart.umd.min.js') }}"></script>
 
